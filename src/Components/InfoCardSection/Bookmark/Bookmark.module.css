@@ -1,0 +1,21 @@
+.Bookamark__Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 180px;
+    height: 60px;
+    background-color: rgba(204, 204, 204, 0.301);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+.Bookmark__Text {
+    font-weight: 700;
+    padding: 30px 30px 30px 10px;
+}
+
+.active{
+    color:  #147b74;
+    padding: 30px 30px 30px 10px;
+}
