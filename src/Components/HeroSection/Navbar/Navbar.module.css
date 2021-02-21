@@ -1,0 +1,16 @@
+.Navbar {
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.Burger{
+    position: absolute;
+    margin-top: 20px;
+    left: 90%;
+    height: 16px;
+    cursor: pointer;
+    z-index: 10;
+}

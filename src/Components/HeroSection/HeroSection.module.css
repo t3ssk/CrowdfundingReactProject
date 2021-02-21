@@ -1,0 +1,15 @@
+.Hero{
+    width: 100vw;
+    height: 25rem;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.desktop{
+    background-image: url('../../images/image-hero-desktop.jpg');
+}
+
+.mobile{
+    background-image: url('../../images/image-hero-mobile.jpg');
+}
