@@ -1,0 +1,37 @@
+.Counter{
+    background-color: white;
+    border-radius: 10px;
+    width: 60vw;
+    border: 1px solid rgba(204, 204, 204, 0.384);
+    padding: 40px 40px 60px 40px;
+    margin: auto;
+    margin-top: 300px;
+}
+.Counter__info {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 786px){
+    .Counter{
+     width: 90%;
+    }
+    .Counter__info{
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 436px){
+    .Counter{
+        margin-top: 400px;
+       }
+}
+
+@media screen and (max-width: 336px){
+    .Counter{
+        margin-top: 450px;
+       }
+}

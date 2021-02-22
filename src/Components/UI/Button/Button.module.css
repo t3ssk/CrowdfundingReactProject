@@ -11,3 +11,10 @@
     background-color: #147b74;
     color: rgba(255, 255, 255, 0.911);
 }
+
+@media screen and (max-width: 320px){
+    .Button{
+        padding: 10px 15px;
+        margin: 0 10px;
+    }
+}

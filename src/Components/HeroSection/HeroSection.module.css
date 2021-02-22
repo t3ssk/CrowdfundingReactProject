@@ -1,7 +1,9 @@
 .Hero{
     width: 100vw;
     height: 25rem;
-    margin: auto;
+    position: relative;
+    top: 0;
+    left: 0;
     background-repeat: no-repeat;
     background-size: cover;
 }

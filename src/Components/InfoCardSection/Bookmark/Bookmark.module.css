@@ -1,14 +1,17 @@
 .Bookamark__Container{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 180px;
-    height: 60px;
-    background-color: rgba(204, 204, 204, 0.301);
+    justify-content: space-between;
+    width: 185px;
+    height: 58px;
+    background-color: rgba(238, 212, 212, 0.301);
     border-radius: 30px;
     cursor: pointer;
 }
 
+.Bookmark__Icon {
+    margin-top: 2px;
+}
 
 .Bookmark__Text {
     font-weight: 700;

@@ -1,0 +1,49 @@
+.Counter__Item{
+    width: 25%;
+    margin: 0 0 30px 0;
+}
+
+.Counter__Item h2{
+    color: black;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.Counter__bordered{
+    border-right: 1px solid rgba(204, 204, 204, 0.534);
+}
+.Deco__underline{
+    display: none;
+}
+
+@media screen and (max-width: 880px){
+    .Counter__bordered{
+        border-right: none;
+    }
+    .Counter__Item hr{
+        width: 50%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 980px){
+    .Counter__Item{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 20px;
+    }
+    .Counter__Item h2{
+        font-size: 1.7rem;
+    }
+
+    .Counter__Item p{
+        padding-bottom: 20px;
+    }
+    .Deco__underline{
+        display: block;
+        border: none;
+        border: 1px solid rgba(204, 204, 204, 0.534);
+        width: 40%;
+    }
+}

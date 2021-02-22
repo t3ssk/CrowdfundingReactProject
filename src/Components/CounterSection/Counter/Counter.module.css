@@ -1,0 +1,26 @@
+.Progress__holder{
+    width: 90%;
+    margin-left: 5%;
+    height: 15px;
+    background-color: rgba(204, 204, 204, 0.555);
+    border-radius: 15px;
+}
+
+.Progress__bar{
+    width: 70%;
+    margin-left: 0%;
+    height: 15px;
+    border-radius: 15px;
+    background-color: hsl(176, 50%, 47%);
+    transform-origin: left;
+    animation: growth 500ms linear 1;
+}
+
+@keyframes growth {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
