@@ -4,11 +4,18 @@ import {Provider} from 'react-redux';
 import {createStore, combineReducers, compose} from 'redux';
 import './index.css';
 import App from './App';
+import modalSupportReducer from './store/reducers/modalReducer';
+import optionsModalReducer from './store/reducers/optionsModalRediucer';
+import optionsReducer from './store/reducers/optionsReducer';
+import backersReducer from './store/reducers/backersReducer';
 
 
 
 const rootReducer = combineReducers({
-
+    supportModal: modalSupportReducer,
+    optionsModal: optionsModalReducer,
+    options: optionsReducer,
+    backers: backersReducer
 })
 
 

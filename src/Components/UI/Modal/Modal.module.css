@@ -1,0 +1,39 @@
+.Modal_backsplash{
+    width: 100vw;
+    height: 320vh;
+    position: absolute;
+    top: 0;
+    left:0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.521);
+    z-index: 20;
+}
+
+.Modal{
+    width: 40%;
+    height: auto;
+    position: absolute;
+    top: 10vw;
+    left: 30%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.616);
+    padding: 50px;
+    text-align: center;
+    z-index: 30;
+}
+
+.Large{
+    width: 60% ;
+    left: 20%;
+}
+
+@media screen and (max-width: 830px){
+    .Modal_backsplash{
+        height: 330vh; 
+    }
+    .Modal{
+        width: 80%;
+        left: 10%;
+    }
+}

@@ -1,0 +1,13 @@
+.SupportModal {
+    margin: auto;
+   width: 70%; 
+   line-height: 1.5rem;
+}
+
+.SupportModal h2{
+    color: black;
+    padding: 60px 0 20px 0;
+}
+.SupportModal p{
+    padding-bottom: 20px;
+}

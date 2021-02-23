@@ -1,0 +1,63 @@
+.optionCard {
+    width: 95%;
+    margin-left: 1.8%;
+    margin-top: 35px;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.705); 
+    line-height: 1.5rem;
+}
+.optionCard__Titlepart{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.optionCard__Titlepart h3{
+    color: black;
+    margin-left: 3px;
+}
+.optionCard__Titlepart p{
+    color: hsl(176, 50%, 47%);
+}
+.optionCard__Select{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.optionCard__Itemsleft{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.optionCard__Itemsleft h4{
+    color: black;
+    font-size: 2rem;
+    font-weight: 700; 
+    margin-right: 10px;
+    align-self: center;
+}
+.optionCard__Itemsleft p {
+    align-self: center;
+}
+.optionCard_disabled{
+    opacity: 0.3;
+}
+
+@media screen and (max-width: 830px){
+    .optionCard__Titlepart{
+        display: block;
+        line-height: 2rem;
+    }
+    .optionCard__Titlepart h3 {
+        margin-left: 0;
+    }
+    .optionCard__Select{
+        display: block;
+    }
+    .optionCard__Itemsleft{
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+}

@@ -1,0 +1,13 @@
+.Main {
+    margin-left: 20%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+
+
+@media screen and (max-width: 830px){
+    .Main{
+        margin-left: 5%;
+    }
+}

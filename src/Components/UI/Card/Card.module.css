@@ -1,0 +1,14 @@
+.Card {
+    width: 60vw;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgba(204, 204, 204, 0.384);
+    padding: 20px 40px 60px 40px;
+}
+
+@media screen and (max-width: 830px){
+    .Card{
+        width: 90vw;
+        left: 5vw;
+    }
+}

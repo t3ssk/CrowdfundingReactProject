@@ -11,7 +11,10 @@
     background-color: #147b74;
     color: rgba(255, 255, 255, 0.911);
 }
-
+.Button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 @media screen and (max-width: 320px){
     .Button{
         padding: 10px 15px;

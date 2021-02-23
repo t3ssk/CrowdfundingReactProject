@@ -1,0 +1,11 @@
+.About__heading{
+    padding: 50px 20px;
+    color: black;
+    font-size: 1.2rem; 
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.About__content {
+    padding: 0px 20px 40px 20px;
+    line-height: 1.5rem;
+}

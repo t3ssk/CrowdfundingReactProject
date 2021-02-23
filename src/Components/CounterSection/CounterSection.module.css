@@ -1,22 +1,24 @@
 .Counter{
-    background-color: white;
-    border-radius: 10px;
-    width: 60vw;
-    border: 1px solid rgba(204, 204, 204, 0.384);
-    padding: 40px 40px 60px 40px;
-    margin: auto;
     margin-top: 300px;
+    margin-left: 20%;
 }
 .Counter__info {
     width: 90%;
+    padding-top: 30px;
     margin: auto;
     display: flex;
     justify-content: space-between;
 }
 
-@media screen and (max-width: 786px){
+.Counter h3 {
+    text-align: center;
+    color: rgb(20, 123, 116);
+}
+
+@media screen and (max-width: 830px){
     .Counter{
      width: 90%;
+     margin-left: 5%;
     }
     .Counter__info{
         display: block;
@@ -24,7 +26,7 @@
 }
 
 
-@media screen and (max-width: 436px){
+@media screen and (max-width: 450px){
     .Counter{
         margin-top: 400px;
        }
@@ -33,5 +35,6 @@
 @media screen and (max-width: 336px){
     .Counter{
         margin-top: 450px;
+
        }
 }
