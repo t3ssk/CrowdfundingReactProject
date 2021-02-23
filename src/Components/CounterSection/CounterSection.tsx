@@ -44,7 +44,7 @@ export const CounterSection : React.FC = () => {
             {counterInfoMap}
         </div>
         <Counter/>
-        {backers.money === 100000 && <h3>🎉 Thanks for your support, we now have all the money we need 🎉</h3>}
+        {backers.money >= 100000 && <h3>🎉 Thanks for your support, we now have all the money we need 🎉</h3>}
         </Card>
     </div>
 }

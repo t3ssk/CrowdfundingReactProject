@@ -1,6 +1,6 @@
 .Modal_backsplash{
     width: 100vw;
-    height: 320vh;
+    height: 370vh;
     position: absolute;
     top: 0;
     left:0;
@@ -30,7 +30,7 @@
 
 @media screen and (max-width: 830px){
     .Modal_backsplash{
-        height: 330vh; 
+        height: 530vh; 
     }
     .Modal{
         width: 80%;

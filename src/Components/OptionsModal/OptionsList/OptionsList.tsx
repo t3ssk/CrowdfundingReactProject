@@ -29,7 +29,7 @@ export const OptionsList:React.FC = () => {
 
         return(
         <div key={item.id} className = {`${styles.Option} ${item.active && styles.active} ${item.left<= 0 ? styles.disabled : null}`}>
-           <div onClick={()=>dispatch({type: 'OPTION/SET_ACTIVE', payload:{id: item.id} })} className={styles.PickOption}>
+           <div onClick={()=>{item.left > 0 && dispatch({type: 'OPTION/SET_ACTIVE', payload:{id: item.id} })}} className={styles.PickOption}>
             <div className={styles.Option__Heading}>
                 <div className={styles.Radio__btn}>
                     {item.active && <div className={styles.Radio__btn__active}/>}
@@ -46,7 +46,7 @@ export const OptionsList:React.FC = () => {
             <p className={styles.Option__Desc}>{item.desc}</p>
             </div>
             {item.active && <div className={styles.Option__enterPledge}>
-                <p>Enter your pledge</p>
+                <p className={styles.Pledge__text}>Enter your pledge</p>
                 <div className={styles.Pledge__enter}>
                 <span className={styles.Currency}><i>$</i><input type='number' min={item.minPrice} value={price===0? '' : price.toString()} onChange={handleChange}/></span>
                 <Button onClick={handleClick}>Continue</Button></div>

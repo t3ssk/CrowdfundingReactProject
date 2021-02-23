@@ -1,10 +1,3 @@
-.Option{
-    padding: 40px 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(204, 204, 204, 0.644);
-    margin: 30px 0;
-}
-
 .active {
     border: 1px solid hsl(176, 50%, 47%);
 }
@@ -12,51 +5,33 @@
 .disabled{
     opacity: 0.4;
 }
-
-.Option__Heading{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
 .PickOption{
     cursor: pointer;
 }
 .Option__Heading h4{
     color: black;
-    padding-left: 20px;
 }
 .Option__Heading h4:hover{
     color: hsl(176, 50%, 47%);
 }
-
 .Option__Heading p{
     font-weight: 500;
-    color: hsl(176, 50%, 47%);
-    padding-left: 20px;
-} 
+    color: hsl(176, 50%, 47%);} 
 .Option__left p{
     color: hsl(0, 0%, 48%);
     font-weight: 200;
 }
-.Option__left{
-    position: relative;
-    top: -28px;
-    left: 90%;
-    display: flex;
-    align-items: center;
-}
 .Option__left h5{
     color: black;
     font-size: 1.5rem;
-    margin-right: 10px;
 }
 .Radio__btn{
     width: 25px;
     height: 25px;
     border-radius: 50%;
     border: 1px solid rgba(204, 204, 204, 0.644);
+    margin-right: 20px;
 }
-
 .Radio__btn__active{
     width: 17px;
     height: 17px;
@@ -65,94 +40,131 @@
     margin-top: 3px;
     margin-left: 2.5px;
 }
-.Option__Heading_text{
-    display: inline-flex;
-    
-}
 .Option__Desc{
     text-align: left;
-    width: 80%;
-    margin: 10px 0 10px 45px ;
 }
 
 .Option__enterPledge{
-    margin-top: 20px;
-    padding-top: 40px;
     border-top: 1px solid rgba(204, 204, 204, 0.527);
-    width: 108.8%;
-    height: 4rem;
-    margin-left: -4.5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 
 .Option__enterPledge input {
+    padding-left: 30px;
     height: 50px;
-    border: 1px solid hsl(176, 50%, 47%);
+    border: 1px solid rgb(204, 204, 204);
     border-radius: 30px;
-    width: 90px;
-    margin-left: 30%;
-    margin-top: -18px;
-    padding-left: 35px;
+    width: 150px;
+    margin-right: 40px;
 }
-.Pledge__enter{
-    display: flex;
-    width: 265px;
-    justify-content: space-between;
+
+.Option__enterPledge input:active, .Option__enterPledge input:hover {
+    border: 1px solid hsl(176, 50%, 47%);
 }
 
 .Currency i{
     position: relative;
-    top: 18px;
-    left: 10px;
+    top: 0px;
+    left: 30px;
     font-weight: 700;
     font-style: normal;
     color:hsla(0, 0%, 48%, 0.384)
 }
-@media screen and (max-width: 980px){
-    .Option__left{
-        left: 80%;
+
+    .Option {
+    padding: 40px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.644);
+    margin: 30px 0;
     }
-}
-@media screen and (max-width: 740px){
-    .Option__Heading_text{
+    
+    .PickOption {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .Option__Heading { grid-area: 1 / 1 / 2 / 5;
+            display: flex;
+        }
+        .Option__Heading_text{
+            display: flex;
+        }
+        .Option__Heading_text p{
+            margin-left: 20px;
+        }
+        
+        .Option__left { 
+            grid-area: 1 / 5 / 2 / 6; 
+            display: flex;
+            align-items: center;
+            margin-top: -20px;
+        }
+        .Option__left p {
+            margin-left: 10px;
+        }
+        .Option__Desc { 
+            grid-area: 2 / 1 / 3 / 6;
+            text-align: left;
+            margin-left: 45px; 
+        }
+
+        .Option__enterPledge{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            margin-top: 40px;
+            width: 109%;
+            margin-left: -4.5%;
+            }
+            
+            .Pledge__text{ 
+                grid-area: 1 / 1 / 2 / 3;
+                margin-top: 45px;
+            }
+            .Pledge__enter { grid-area: 1 / 3 / 2 / 6;
+                margin-top: 30px; }
+
+
+@media screen and (max-width: 880px){
+    .Option{
+        padding-bottom: 0px;
+    }
+    .Option__Heading_text { 
         display: block;
         text-align: left;
     }
-    .Option__Heading_Text p {
-        padding-left: 20px;
-        padding-top: 20px;
+    .Option__Heading_text p{
+        margin-left: 0px;
     }
-    .OptionsList_Option__Heading {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 500px;
+    .PickOption {
+        grid-template-rows: repeat(3, 1fr);
     }
     .Option__left{
-        top: 130px;
-        left: 11%;
+        grid-area: 3 / 1 / 4 / 3; 
+        padding-top: 20px;
     }
-    .Option{
-        padding: 40px 30px 80px;
+    .Option__Desc{
+        margin-left: 0;
+        margin-top: -20px;
+        line-height: 2rem;
     }
     .Option__enterPledge{
-        width: 114.5%;
-        margin-left: -7%;
-        padding-top: 0;
-        margin-left: -40px;
-        margin-top: 60px;
         display: block;
-    }
-    .Option__enterPledge p {
-        margin: auto;
-        padding: 20px;
+        padding-bottom: 20px;
     }
     .Pledge__enter{
         display: flex;
-        justify-content: space-around;
-        width: 80%;
-        margin: auto;
+    }
+    .Option__enterPledge input {
+        width: 100px;
+        margin-top: -20px;
+    }
+    .Currency i{
+        left: -50px;
+        top: 15px;
     }
 }
