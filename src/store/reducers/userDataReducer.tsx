@@ -1,4 +1,4 @@
-interface state {
+export interface stateIF {
     username: string|null,
     name: string|null,
     lastName: string|null,
@@ -10,7 +10,7 @@ interface state {
 }
 interface action {
     type: string,
-    payload: state
+    payload: stateIF
 }
 
 const initialState = {username: null,
@@ -23,7 +23,7 @@ const initialState = {username: null,
     phone: null}
 
 
-export const userDataReducer = (state:state=initialState, action:action) => {
+export const userDataReducer = (state:stateIF=initialState, action:action) => {
     switch (action.type) {
         case 'USER/FETCH_DATA':
             return {...state, ...action.payload};

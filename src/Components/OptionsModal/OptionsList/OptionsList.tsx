@@ -1,7 +1,9 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import firebase from 'firebase/app';
+import 'firebase/database';
 import styles from './OptionsList.module.css';
-import {optionsConfig, option} from '../../../Utility/OptionsConfig';
+import {option} from '../../../Utility/OptionsConfig';
 import { Button } from '../../UI/Button/Button';
 
 
@@ -11,6 +13,10 @@ export const OptionsList:React.FC = () => {
     const opts = useSelector((state: {options: option[]}) => state.options)
     const user = useSelector((state:{user:{userId:string, refreshToken: string}}) => state.user)
     const dispatch = useDispatch()
+    const getOrderNum = (): number => {
+        return Math.floor(Math.random()*1000000)
+    }
+
     const handleChange = (event: any):void => {
             const target = event.target as HTMLInputElement
             setPrice(Number(target.value))
@@ -18,13 +24,22 @@ export const OptionsList:React.FC = () => {
     const optionsMap = opts.map((item:option)=>{
        
         const handleClick = () => {
-            if(price !== 0){
+            if(price !== 0 && price >= item.minPrice){        
+                const newData = {
+                    orderNum: getOrderNum(),
+                    orderedBy: user.userId,
+                    donated: price,
+                    date: new Date().toLocaleString('cs-CZ', { timeZone: 'UTC' }),
+                    item: item.title
+                }
+                firebase.database().ref('/orders/' + newData.orderNum).set(newData);
+
             dispatch({type: 'BACKERS/ADD', payload: price})
             dispatch({type: 'OPTIONS/CHANGE_AMOUNT', payload: {id: item.id, }})
             dispatch({type: 'OPTIONS_MODAL/OFF'})
             dispatch({type: 'SUPPORT_MODAL/ON'})}
             else {
-                alert('You have to select amount of money you want to back us with!')
+                alert('You have to select at least the minimal amount of money you want to back us with!')
             }
         }
 
