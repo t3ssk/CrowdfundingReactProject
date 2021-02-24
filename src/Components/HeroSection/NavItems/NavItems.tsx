@@ -1,10 +1,12 @@
 import React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import styles from './NavItems.module.css';
 
 export const NavItems: React.FC = () => {
-    const isLoggedIn = true;
+    const user = useSelector((state:{user:{userId: string, refreshToken: string}}) => state.user)
+    const dispatch = useDispatch()
     const navConfig = [
         {id: 'nav0', title: 'Login/Sign in', href: '/login'},
         {id: 'nav0b', title: 'Logout', href: '/logout'},
@@ -19,12 +21,12 @@ export const NavItems: React.FC = () => {
     const liMap = navConfig.map(item=>{
         if(item.href==='#'){
         return <li key={item.id}><a href={item.href} className={styles.disabled}>{item.title}</a></li>}
-        if(!isLoggedIn){ 
+        if(user.refreshToken === null){ 
             if(item.title !== 'Logout' && item.title !== 'Your purchases'){return <li key={item.id}><NavLink to={item.href}>{item.title}</NavLink></li>}
             }
-        else if(isLoggedIn){
+        else if(user.refreshToken !== null){
             if(item.title !== 'Login/Sign in'){
-                if(item.title === 'Logout'){return  <li key={item.id} className={styles.Logout}>{item.title}</li>}
+                if(item.title === 'Logout'){return  <li key={item.id} className={styles.Logout} onClick={()=>{dispatch({type: 'LOG-OUT/USER'}); dispatch({type: 'USER/ERASE_DATA'})}}>{item.title}</li>}
                 return <li key={item.id}><NavLink to={item.href}>{item.title}</NavLink></li>}
         }
     })

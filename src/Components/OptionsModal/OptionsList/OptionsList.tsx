@@ -9,6 +9,7 @@ import { Button } from '../../UI/Button/Button';
 export const OptionsList:React.FC = () => {
     const [price, setPrice] = React.useState<number>(0)
     const opts = useSelector((state: {options: option[]}) => state.options)
+    const user = useSelector((state:{user:{userId:string, refreshToken: string}}) => state.user)
     const dispatch = useDispatch()
     const handleChange = (event: any):void => {
             const target = event.target as HTMLInputElement
@@ -49,7 +50,7 @@ export const OptionsList:React.FC = () => {
                 <p className={styles.Pledge__text}>Enter your pledge</p>
                 <div className={styles.Pledge__enter}>
                 <span className={styles.Currency}><i>$</i><input type='number' min={item.minPrice} value={price===0? '' : price.toString()} onChange={handleChange}/></span>
-                <Button onClick={handleClick}>Continue</Button></div>
+                <Button onClick={handleClick} disabled={user.refreshToken === null}>Continue</Button></div>
                 </div>}
         </div>
         )

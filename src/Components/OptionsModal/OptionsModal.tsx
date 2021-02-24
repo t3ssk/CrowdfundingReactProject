@@ -1,5 +1,6 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+
 import { Modal } from '../UI/Modal/Modal';
 import cross from '../../images/icon-close-modal.svg';
 import styles from './OptionsModal.module.css';

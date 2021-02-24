@@ -9,6 +9,8 @@ import modalSupportReducer from './store/reducers/modalReducer';
 import optionsModalReducer from './store/reducers/optionsModalRediucer';
 import optionsReducer from './store/reducers/optionsReducer';
 import backersReducer from './store/reducers/backersReducer';
+import { userReducer } from './store/reducers/userReducer';
+import { userDataReducer } from './store/reducers/userDataReducer';
 
 
 
@@ -16,7 +18,9 @@ const rootReducer = combineReducers({
     supportModal: modalSupportReducer,
     optionsModal: optionsModalReducer,
     options: optionsReducer,
-    backers: backersReducer
+    backers: backersReducer,
+    user: userReducer,
+    userData: userDataReducer
 })
 
 
