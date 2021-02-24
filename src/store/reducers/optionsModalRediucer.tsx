@@ -1,4 +1,4 @@
-const initialState = true;
+const initialState = false;
 
 const optionsModalReducer = (state:boolean=initialState, action: {type:string}): boolean => {
     switch(action.type){

@@ -11,6 +11,7 @@
     padding-left: 20px;
 }
 
+
 .MobileNavList{
     list-style-type: none;
     background-color: white;
@@ -34,4 +35,20 @@
 .MobileNavList li {
     padding:20px;
     border-bottom: 1px solid rgba(204, 204, 204, 0.507);
+}
+
+.disabled {
+    color:rgb(148, 148, 148) !important;
+    pointer-events: none;
+}
+
+.Logout{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 786){
+    .Logout{
+        color: black;
+    }
 }

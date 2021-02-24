@@ -6,9 +6,18 @@
     padding: 20px 40px 60px 40px;
 }
 
+.small{
+    width: 30vw;
+}
+
 @media screen and (max-width: 830px){
     .Card{
         width: 90vw;
         left: 5vw;
+    }
+
+    .small{
+        width: 70vw;
+        margin-left: -10%;
     }
 }

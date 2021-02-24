@@ -1,0 +1,32 @@
+.Purchases{
+    width: 60vw;
+    margin:auto;
+    margin-top: 50px;
+    line-height: 2rem;
+}
+
+
+.Purchases h2 {
+    color: hsl(176, 72%, 28%);
+    text-align: center;
+    padding-top: 40px;
+}
+
+.Purchases h3 {
+    text-align: center;
+    padding: 20px;
+}
+
+.Order{
+    border-bottom: 1px solid rgba(204, 204, 204, 0.349);
+    margin-bottom: 20px;
+}
+.Head__Info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Order span{
+    color: hsl(176, 50%, 47%);
+    font-weight: 500;
+}

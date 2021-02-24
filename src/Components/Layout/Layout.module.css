@@ -6,3 +6,7 @@
     top: 0;
     left:0;
 }
+
+.BG__DARK{
+    background-color:hsl(176, 72%, 28%);
+}

@@ -1,0 +1,27 @@
+.Logo{
+    width: 10%;
+    margin-left: 12vw;
+    margin-top: 10%;
+    padding-bottom: 40px;
+}
+.Login{
+    width: 30vw;
+    margin-left: 35vw;
+    text-align: center;
+}
+
+.Login h4{
+    padding: 20px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 830px){
+    .Login{
+        width: 60vw;
+        margin-left: 22vw;
+    }
+    .Logo{
+        margin-left: 17vw;
+    }
+}
