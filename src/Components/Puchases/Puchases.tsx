@@ -17,31 +17,22 @@ export const Purchases:React.FC = () => {
     const user = useSelector((state: {user:{userId: string, refreshToken: string}}) => state.user)
     const userData = useSelector((state:{userData: stateIF}) => state.userData)
     const [orederData, setOrderData] = React.useState<any>([])
-    
+    let dataArr:PurchasesConfig[] = []
     React.useEffect(()=>{
         if(user.userId){
         firebase.database().ref('/orders').orderByChild("orderedBy").equalTo(userData.userId).on('value', (snapshot)=>{
             const data = snapshot.val();
-            const dataArr = []
             for(const key in data){
                 
                 dataArr.push(data[key])
+                setOrderData(dataArr)
             }
-            setOrderData(dataArr)
-            console.log(orederData)
+            
         })}
 
-    },[orederData, userData.userId, user.userId])
-
-    const getOrderNum = (): number => {
-        return Math.floor(Math.random()*1000000)
-    }
+    },[])
+    
   
-    const dummyContent:PurchasesConfig[] = [
-        {donated: 25, item: 'Bamboo Stand', orderNum: getOrderNum(), date: new Date()},
-        {donated: 5, item: 'No reward', orderNum: getOrderNum(), date: new Date()},
-        {donated: 95, item: 'Black Edition Stand', orderNum: getOrderNum(), date: new Date()}
-    ]
 
     const ordersMap = orederData.map((item:any)=>{
         return (
