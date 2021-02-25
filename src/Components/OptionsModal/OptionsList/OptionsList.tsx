@@ -12,6 +12,7 @@ export const OptionsList:React.FC = () => {
     const [price, setPrice] = React.useState<number>(0)
     const opts = useSelector((state: {options: option[]}) => state.options)
     const user = useSelector((state:{user:{userId:string, refreshToken: string}}) => state.user)
+    const bckrs = useSelector((state:{backers:{backers:number, money:number}}) => state.backers)
     const dispatch = useDispatch()
     const getOrderNum = (): number => {
         return Math.floor(Math.random()*1000000)
@@ -36,6 +37,7 @@ export const OptionsList:React.FC = () => {
 
             dispatch({type: 'BACKERS/ADD', payload: price})
             dispatch({type: 'OPTIONS/CHANGE_AMOUNT', payload: {id: item.id, }})
+            firebase.database().ref('backers/').set({backers: bckrs.backers+1, money: bckrs.money+price})
             dispatch({type: 'OPTIONS_MODAL/OFF'})
             dispatch({type: 'SUPPORT_MODAL/ON'})}
             else {

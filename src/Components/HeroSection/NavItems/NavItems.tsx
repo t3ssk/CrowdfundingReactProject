@@ -1,10 +1,11 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import { withRouter } from "react-router";
 import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import styles from './NavItems.module.css';
 
-export const NavItems: React.FC = () => {
+export const NavItems: React.FC<any> = (props) => {
     const user = useSelector((state:{user:{userId: string, refreshToken: string}}) => state.user)
     const dispatch = useDispatch()
     const navConfig = [
@@ -17,7 +18,11 @@ export const NavItems: React.FC = () => {
     ]
 
     const isMobile = useMediaQuery({ maxWidth: 786 })
-
+    const handleClick = () => {
+        dispatch({type: 'LOG-OUT/USER'}); 
+        dispatch({type: 'USER/ERASE_DATA'})
+        props.history.push('/')
+    }
     const liMap = navConfig.map(item=>{
         if(item.href==='#'){
         return <li key={item.id}><a href={item.href} className={styles.disabled}>{item.title}</a></li>}
@@ -26,7 +31,7 @@ export const NavItems: React.FC = () => {
             }
         else if(user.refreshToken !== null){
             if(item.title !== 'Login/Sign in'){
-                if(item.title === 'Logout'){return  <li key={item.id} className={styles.Logout} onClick={()=>{dispatch({type: 'LOG-OUT/USER'}); dispatch({type: 'USER/ERASE_DATA'})}}>{item.title}</li>}
+                if(item.title === 'Logout'){return  <li key={item.id} className={styles.Logout} onClick={handleClick}>{item.title}</li>}
                 return <li key={item.id}><NavLink to={item.href}>{item.title}</NavLink></li>}
         }
     })
@@ -36,3 +41,4 @@ export const NavItems: React.FC = () => {
 }
 
 
+export default withRouter(NavItems)

@@ -17,20 +17,20 @@ export const Purchases:React.FC = () => {
     const user = useSelector((state: {user:{userId: string, refreshToken: string}}) => state.user)
     const userData = useSelector((state:{userData: stateIF}) => state.userData)
     const [orederData, setOrderData] = React.useState<any>([])
-    let dataArr:PurchasesConfig[] = []
+    
     React.useEffect(()=>{
         if(user.userId){
         firebase.database().ref('/orders').orderByChild("orderedBy").equalTo(userData.userId).on('value', (snapshot)=>{
             const data = snapshot.val();
+            let dataArr:PurchasesConfig[] = []
             for(const key in data){
-                
                 dataArr.push(data[key])
-                setOrderData(dataArr)
             }
-            
+            setOrderData(dataArr)
         })}
+        return () => firebase.database().ref('/orders').orderByChild("orderedBy").equalTo(userData.userId).off()
 
-    },[])
+    })
     
   
 

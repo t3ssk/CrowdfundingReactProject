@@ -30,9 +30,11 @@ export const CounterSection : React.FC = () => {
             return numArr.join('')
     }
 
+    let content = 'loading...'
+
     const counterConfig : config[]= [
-        {id: 'count1', heading: `$ ${getString(backers.money)}`, desc: 'of $100,000 backed', isLast: false},
-        {id: 'count2', heading: getString(backers.backers), desc: 'total backers', isLast: false},
+        {id: 'count1', heading:  backers.money === 0 ? content: `$ ${getString(backers.money)}`, desc: 'of $100,000 backed', isLast: false},
+        {id: 'count2', heading: backers.backers === 0 ? content:  getString(backers.backers), desc: 'total backers', isLast: false},
         {id: 'count3', heading: '56', desc: 'days left', isLast: true}
     ]
 

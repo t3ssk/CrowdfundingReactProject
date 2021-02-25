@@ -1,6 +1,8 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {Route} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import firebase from 'firebase/app';
+import 'firebase/database';
 import { CounterSection } from '../CounterSection/CounterSection';
 import { HeroSection } from '../HeroSection/HeroSection';
 import { InfoCard } from '../InfoCardSection/InfoCard';
@@ -18,6 +20,16 @@ interface LayoutProps {
 export const Layout : React.FC<LayoutProps> = (props) => {
     const suportModal = useSelector((state:{supportModal:boolean})=> state.supportModal);
     const optionsModal = useSelector((state:{optionsModal:boolean})=>state.optionsModal);
+    const dispatch = useDispatch()
+
+    useEffect (() => {
+        firebase.database().ref('backers/').on('value', (snapshot)=>{
+            const data = snapshot.val();
+            dispatch({type: 'BACKERS/INIT', payload: data})
+        })
+        return ()=>firebase.database().ref('backers/').off();
+    })
+
     return (
         <React.Fragment>
             <main className={styles.Main}>

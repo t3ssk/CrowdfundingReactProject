@@ -30,3 +30,9 @@
     color: hsl(176, 50%, 47%);
     font-weight: 500;
 }
+
+@media screen and (max-width: 830px){
+    .Purchases{
+        margin-left: 5.5vw;
+    }
+}

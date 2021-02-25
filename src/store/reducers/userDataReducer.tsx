@@ -1,3 +1,4 @@
+
 export interface stateIF {
     username: string|null,
     name: string|null,
@@ -6,7 +7,8 @@ export interface stateIF {
     address: string|null,
     city: string|null,
     zip: string|null,
-    phone: string|null
+    phone: string|null,
+    bookmarked: boolean|null
 }
 interface action {
     type: string,
@@ -20,7 +22,8 @@ const initialState = {username: null,
     address: null,
     city: null,
     zip: null,
-    phone: null}
+    phone: null,
+    bookmarked: false}
 
 
 export const userDataReducer = (state:stateIF=initialState, action:action) => {
@@ -29,6 +32,9 @@ export const userDataReducer = (state:stateIF=initialState, action:action) => {
             return {...state, ...action.payload};
         case 'USER/ERASE_DATA': 
             return initialState
+        case 'USER/UPDATE_BOOKMARK': 
+            const prevBookmark = state.bookmarked
+            return {...state, bookmarked: !prevBookmark}
         default:
             return state;
     }

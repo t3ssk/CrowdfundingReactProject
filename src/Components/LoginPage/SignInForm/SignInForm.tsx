@@ -37,7 +37,8 @@ export const SignInForm: React.FC<any> = (props) => {
                     address: value.address,
                     city: value.city,
                     zip: value.zip,
-                    phone: value.phone
+                    phone: value.phone,
+                    bookmarked: false
                 }
 
                 dispatch({type: 'LOG-IN/USER', payload: { userId: user.uid, refreshToken: user.refreshToken}})

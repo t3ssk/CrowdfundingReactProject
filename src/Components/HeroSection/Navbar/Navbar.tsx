@@ -3,7 +3,7 @@ import {Desktop, Mobile} from '../../../Utility/MediaQueries';
 import { Logo } from '../Logo/Logo';
 import burger from '../../../images/icon-hamburger.svg';
 import close from '../../../images/icon-close-menu.svg';
-import { NavItems } from '../NavItems/NavItems';
+import  NavItems  from '../NavItems/NavItems';
 import styles from './Navbar.module.css';
 import { MobileNav } from '../MobileNav/MobileNav';
 

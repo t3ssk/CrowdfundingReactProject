@@ -33,8 +33,8 @@
     margin-right: 20px;
 }
 .Radio__btn__active{
-    width: 17px;
-    height: 17px;
+    width: 75%;
+    height: 75%;
     border-radius: 50%;
     background-color: hsl(176, 50%, 47%);
     margin-top: 3px;
@@ -129,7 +129,7 @@
                 margin-top: 30px; }
 
 
-@media screen and (max-width: 880px){
+@media screen and (max-width: 1105px){
     .Option{
         padding-bottom: 0px;
     }
@@ -158,13 +158,55 @@
     }
     .Pledge__enter{
         display: flex;
+        width: 300px;
+        margin: auto;
+        margin-top: 20px;
+        justify-content: space-between;
     }
     .Option__enterPledge input {
         width: 100px;
-        margin-top: -20px;
+        margin-top: 5%;
     }
     .Currency i{
-        left: -50px;
-        top: 15px;
+        left: 15%;
+        top: 4%;
+    }
+}
+
+
+
+@media screen and (max-width: 530px){
+    .Pledge__enter{
+        display: block;
+        text-align: center;  
+        width: 100%;
+        margin-left: 0;
+    }
+    .Pledge__enter input{
+        margin: 20px;
+    }
+    .Currency i{
+        left: 20%;
+        top: 30%;
+    }
+    .Option{
+        width: 120%;
+        margin-left: -13%;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .Currency i{
+       display: none;
+    }
+    .PickOption {
+        grid-template-rows: 150px 1fr 80px;
+    }
+    .Option__left{
+        margin-top: 20px;
+        padding-bottom: 20px;}
+    .Option{
+        width: 150%;
+        margin-left: -25%;
     }
 }
