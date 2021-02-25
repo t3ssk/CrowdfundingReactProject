@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CrowdfundingReactProject/static/css/main.76d81fee.chunk.css",
-    "main.js": "/CrowdfundingReactProject/static/js/main.3a6cdbdf.chunk.js",
-    "main.js.map": "/CrowdfundingReactProject/static/js/main.3a6cdbdf.chunk.js.map",
+    "main.js": "/CrowdfundingReactProject/static/js/main.b4ecb7af.chunk.js",
+    "main.js.map": "/CrowdfundingReactProject/static/js/main.b4ecb7af.chunk.js.map",
     "runtime-main.js": "/CrowdfundingReactProject/static/js/runtime-main.8bf00974.js",
     "runtime-main.js.map": "/CrowdfundingReactProject/static/js/runtime-main.8bf00974.js.map",
     "static/js/2.778f06e8.chunk.js": "/CrowdfundingReactProject/static/js/2.778f06e8.chunk.js",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.8bf00974.js",
     "static/js/2.778f06e8.chunk.js",
     "static/css/main.76d81fee.chunk.css",
-    "static/js/main.3a6cdbdf.chunk.js"
+    "static/js/main.b4ecb7af.chunk.js"
   ]
 }
