@@ -34,10 +34,10 @@ export const OptionsList:React.FC = () => {
                     item: item.title
                 }
                 firebase.database().ref('/orders/' + newData.orderNum).set(newData);
-
             dispatch({type: 'BACKERS/ADD', payload: price})
             dispatch({type: 'OPTIONS/CHANGE_AMOUNT', payload: {id: item.id, }})
             firebase.database().ref('backers/').set({backers: bckrs.backers+1, money: bckrs.money+price})
+            firebase.database().ref('/products/'+item.id).set(item.left)
             dispatch({type: 'OPTIONS_MODAL/OFF'})
             dispatch({type: 'SUPPORT_MODAL/ON'})}
             else {

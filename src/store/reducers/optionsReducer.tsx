@@ -3,7 +3,7 @@ const initialState: option[] = [
     { id: 'opt1', 
     title: 'Pledge with no reward', 
     desc: "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.", 
-    left: 10000000, 
+    left: 0, 
     backingOnly: true,
     pledge: '',
     minPrice: 1,
@@ -15,7 +15,7 @@ const initialState: option[] = [
     { id: 'opt2', 
     title: 'Bamboo Stand', 
     desc: "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.", 
-    left: 101, 
+    left: 0, 
     backingOnly: false,
     pledge: 'Pledge $25 or more',
     minPrice: 25,
@@ -27,7 +27,7 @@ const initialState: option[] = [
     { id: 'opt3', 
     title: 'Black Edition Stand', 
     desc: "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.", 
-    left: 64, 
+    left: 0, 
     backingOnly: false,
     pledge: 'Pledge $75 or more',
     minPrice: 75,
@@ -73,6 +73,38 @@ const optionsReducer = (state = initialState, action: {type: string, payload: an
                 }
             } ) 
             return copy;
+        case 'OPTION-NOREWARD/FETCH': 
+            const stateCp = [...state];
+            stateCp.forEach((item:option)=>{
+                if(item.id === 'opt1'){
+                    item.left = action.payload
+                }
+            })
+            return stateCp 
+        case 'OPTION-BAMBOO/FETCH': 
+        const stateCopyBamboo = [...state];
+            stateCopyBamboo.forEach((item:option)=>{
+                if(item.id === 'opt2'){
+                    item.left = action.payload
+                }
+            })
+            return stateCopyBamboo 
+        case 'OPTION-BLACK/FETCH':
+            const stateCopyBlack = [...state];
+            stateCopyBlack.forEach((item:option)=>{
+                if(item.id === 'opt3'){
+                    item.left = action.payload
+                }
+            })
+            return stateCopyBlack 
+        case 'OPTION-MAHOGANY/FETCH': 
+            const stateCopyMahog = [...state];
+            stateCopyMahog.forEach((item:option)=>{
+                if(item.id === 'opt4'){
+                    item.left = action.payload
+                }
+            })
+            return stateCopyMahog 
         default: 
         return state;}
 }

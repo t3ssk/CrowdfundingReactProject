@@ -27,7 +27,16 @@ export const Layout : React.FC<LayoutProps> = (props) => {
             const data = snapshot.val();
             dispatch({type: 'BACKERS/INIT', payload: data})
         })
-        return ()=>firebase.database().ref('backers/').off();
+        firebase.database().ref('products/').on('value', (snapshot)=>{
+            const data = snapshot.val();
+            dispatch({type: 'OPTION-NOREWARD/FETCH', payload: data.opt1});
+            dispatch({type: 'OPTION-BAMBOO/FETCH', payload: data.opt2});
+            dispatch({type: 'OPTION-BLACK/FETCH', payload: data.opt3});
+            dispatch({type: 'OPTION-MAHOGANY/FETCH', payload: data.opt4});
+        })
+        return ()=>{
+            firebase.database().ref('backers/').off()
+            firebase.database().ref('products/').off();}
     })
 
     return (
